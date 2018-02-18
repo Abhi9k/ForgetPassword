@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>ForgetPassword</title>
+  </head>
+  <body>
+<div class="container">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default"><a href="/">Home</a></button>
+        <button type="button" class="btn btn-default"><a href="addssid">Add SSID</a></button>
+        <button type="button" class="btn btn-default"><a href="qr">QR Code</a></button>
+      </div>
+    </nav>
+
+
+    <div class="jumbotron">
+      <h1>ForgetPassword</h1>
+      <p>This is an app not an error page!! This page is your freedom from remembering more passwords</p>
+     
+    </div>
+    <table class="table table-striped">
+    {% for item in items %}
+      <tr>
+        <td><span><b>SSID </b></span></span>{{item.ssid}}</td>
+        <td><span><b>PASSWORDS </b></span></span>{{item.password}}</td>
+        <td><b>USERS</b></td>
+      </tr>
+       
+       {% for user in item.users %}
+         <tr>
+          <td></td>
+          <td></td>
+          <td>{{user}}</td>
+        </tr>
+       {% endfor %}
+      
+    {% endfor %}
+    </table>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

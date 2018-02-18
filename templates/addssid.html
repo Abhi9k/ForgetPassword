@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>ForgetPassword</title>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js""></script>
+  </head>
+  <body>
+  <div class="container">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default"><a href="/">Home</a></button>
+        <button type="button" class="btn btn-default"><a href="addssid">Add SSID</a></button>
+        <button type="button" class="btn btn-default"><a href="qr">QR Code</a></button>
+      </div>
+    </nav>
+    <div>
+    <form>
+      <div class="form-group">
+        <label for="ssid">SSID</label>
+        <input type="text" class="form-control" id="ssid" placeholder="wifi ssid">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="password">
+      </div>
+      <div class="form-group">
+        <label for="userlist">Comma seperated user email list</label>
+        <textarea class="form-control" rows="3" id="userlist"></textarea>
+      </div>
+
+      <a href="javascript:addnewuser();">Submit</a>
+    </form>
+  </div>
+  </div>
+   
+    <script>
+    function addnewuser() {
+      var ssid = document.getElementById("ssid").value;
+      var password = document.getElementById("password").value;
+      var user_list = document.getElementById("userlist").value;
+	location.href = "/newuser/"+ssid+"/"+password+"/"+user_list;      
+return "/newuser/"+ssid+"/"+password+"/"+user_list;
+    }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
